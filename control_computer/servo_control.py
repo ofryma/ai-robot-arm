@@ -4,9 +4,8 @@ from gpiozero import AngularServo
 servo = AngularServo(18 , min_pulse_width=0.0006 , max_pulse_width=0.0023)
 
 while True:
-    servo.angle(90)
-    sleep(2)
-    servo.angle(0)
-    sleep(2)
-    servo.angle(-90)
-    sleep(2)
+
+    for angle in [90 , 0 , -90]: 
+        print(f"Moving to angle: {angle}")
+        servo.angle = angle
+        sleep(2)
